@@ -1,5 +1,4 @@
-build/
-build2/
+build/*
 .kdev4/
 .directory
 perceptualcolor.kdev4
