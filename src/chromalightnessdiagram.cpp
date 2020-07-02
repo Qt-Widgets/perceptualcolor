@@ -363,6 +363,9 @@ QPoint ChromaLightnessDiagram::fromWidgetCoordinatesToImageCoordinates(const QPo
  */
 void ChromaLightnessDiagram::keyPressEvent(QKeyEvent *event)
 {
+    // TODO singleStep & pageStep for ALL graphical widgets expressed in LCh
+    // values, not in pixel. And the same values accross all widgets!
+    
     QPoint newImageCoordinates = currentImageCoordinates();
     updateDiagramCache();
     switch (event->key()) {

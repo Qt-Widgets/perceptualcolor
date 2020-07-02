@@ -28,7 +28,18 @@ FullColorDescription::FullColorDescription()
 {
     m_valid = false;
 }
-    
+
+// TODO The LCh-hue (and so the graphical widgets) jumps forward and backward
+// when changing RGB-based values (also HSV) when entering and leaving the gray
+// axis, due to lack of hue information. Would it be an option to accept an
+// old/previous FullColorDescription (for the last selected value before
+// entering the gray axis) as additional parameter to get meaningfull hue?
+// Should it be only really for the gray axis, or allow a certain tolerance
+// around the gray axis is necessary to make this work well - and if so,
+// how much tolerance? Would it be useful to define a certain hue, for
+// example 0°, as default hue for when no old hue is available but the
+// new value is on the gray axis?
+
 /** @brief Constructor
  *
  * @param colorSpace The color space in which the color description is created.

@@ -415,11 +415,22 @@ QWidget* ColorDialog::initializeLabPage()
     return tempLchGrouBox;
 }
 
+// TODO Provide setWhatsThis help for widgets. For wheelcolorpicker and
+// chromalightnessdiagram this could describe the keyboard controls and
+// be integrated as default value in the class itself. For the other
+// widgets, a setWhatsThis could be done here within WheelColorPicker,
+// if appropriate.
+
 QWidget* ColorDialog::initializeRgbPage()
 {
     // Create HSV spin boxes
     const int hsvDecimals = 0;
     QHBoxLayout *tempHsvLayout = new QHBoxLayout;
+    // TODO The current behaviour for pageStep = 10 is:
+    // 356 -> 360 -> 0 -> 10
+    // The expected behaviour would be:
+    // 356 -> 6
+    // This will likely require a new class inherited from QDoubleSpinBox.
     m_hsvHueSpinbox = new QDoubleSpinBox();
     m_hsvHueSpinbox->setAlignment(Qt::AlignRight);
     m_hsvHueSpinbox->setMaximum(360);

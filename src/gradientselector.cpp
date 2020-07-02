@@ -220,6 +220,10 @@ void GradientSelector::setPageStep(qreal newPageStep)
     m_pageStep= newPageStep;
 }
 
+// TODO It would be better to have an arrow outside the slider. This
+// could be conformant with the current QStyle, and would guarantee
+// a consistent contrast between the arrow and its background.
+
 void GradientSelector::paintEvent(QPaintEvent* event)
 {
     // We do not paint directly on the widget, but on a QImage buffer first:
