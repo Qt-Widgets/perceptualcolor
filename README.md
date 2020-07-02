@@ -1,4 +1,9 @@
 # PerceptualColor
+A library providing Qt widgets for perceptual color selection, based on the LCh model. And a standalone application similar to KColorChooser.
+
+![](Screenshot1.png)
+
+![](Screenshot2.png)
 
 ## CMake Qt5 GUI Template
 

@@ -218,6 +218,8 @@ QColor RgbColorSpace::colorRgbBound(const cmsCIELCh &LCh) const
     return colorRgbBound(Lab);
 }
 
+// TODO What to do with in-gamut tests if little cms has fallen back to bounded mode because of too complicate profiles? Out in-gamut detection would not work anymore!
+
 /** @brief check if an LCh value is within a specific RGB gamut
  * @param lightness The lightness value
  * @param chroma The chroma value

@@ -2,3 +2,4 @@ build/*
 .kdev4/
 .directory
 perceptualcolor.kdev4
+README.md.backup
