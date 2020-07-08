@@ -49,6 +49,11 @@ ColorPatch::~ColorPatch()
 {
 }
 
+// TODO Provide a special representation (blank widget with two crossed red
+// lines?) for showing absent of a color (different from transparency!)
+// -> not necessary because yet implemented (background, without red
+// lines)!?
+
 /** @brief Handle paint events.
  * 
  * Just draw the frame inherited from QFrame, than paint a rectangle with

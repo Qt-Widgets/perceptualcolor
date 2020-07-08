@@ -46,6 +46,7 @@ namespace PerceptualColor {
  * - If the radial is 0, the angle is meaningless.
  * 
  * This class automatically normalizes the values:
+ * @invariant 
  * - the radial is normalized to value ≥ 0
  * - the angle is normalized to 0° ≤ value < 360°
  * 
@@ -55,7 +56,7 @@ namespace PerceptualColor {
  * initialized with cartesian coordinates (0, 0) then the result is
  * radial 0 and angle 0. See also operator==().
  * 
- * This class is declared as type to Qt's type system:
+ * This class is declared as type to Qt’s type system:
  * Q_DECLARE_METATYPE(PerceptualColor::PolarPointF). Depending on your use
  * case (for example if you want to use it relyably in Qt's signals and
  * slots), you might consider calling qRegisterMetaType() for this type,
@@ -98,21 +99,21 @@ public:
 
     bool operator!=(const PolarPointF other) const;
 
-    qreal radial() const;
-
     qreal angleDegree() const;
 
     static qreal normalizedAngleDegree(const qreal angleDegree);
+
+    qreal radial() const;
 
     QPointF toCartesian() const;
 
 private:
 
-    /** Holds the radial() value. */
-    qreal m_radial;
-
-    /** Holds the angleDegree() value. */
+    /** @brief Holds the angleDegree() value. */
     qreal m_angleDegree;
+
+    /** @brief Holds the radial() value. */
+    qreal m_radial;
 };
 
 QDebug operator<<(QDebug dbg, const PerceptualColor::PolarPointF polarpointf);
